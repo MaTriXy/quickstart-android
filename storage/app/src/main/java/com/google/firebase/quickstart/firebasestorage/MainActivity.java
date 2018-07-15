@@ -148,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onSaveInstanceState(Bundle out) {
+        super.onSaveInstanceState(out);
         out.putParcelable(KEY_FILE_URI, mFileUri);
         out.putParcelable(KEY_DOWNLOAD_URL, mDownloadUrl);
     }
@@ -208,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(TAG, "launchCamera");
 
         // Pick an image from storage
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.setType("image/*");
         startActivityForResult(intent, RC_TAKE_PICTURE);
     }

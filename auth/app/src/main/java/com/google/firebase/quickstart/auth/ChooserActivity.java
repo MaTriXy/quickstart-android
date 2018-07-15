@@ -36,6 +36,8 @@ import android.widget.TextView;
  *     {@link FacebookLoginActivity}
  *     {@link TwitterLoginActivity}
  *     {@link EmailPasswordActivity}
+ *     {@link PasswordlessActivity}
+ *     {@link PhoneAuthActivity}
  *     {@link AnonymousAuthActivity}
  *     {@link CustomAuthActivity}
  */
@@ -46,6 +48,8 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
             FacebookLoginActivity.class,
             TwitterLoginActivity.class,
             EmailPasswordActivity.class,
+            PasswordlessActivity.class,
+            PhoneAuthActivity.class,
             AnonymousAuthActivity.class,
             FirebaseUIActivity.class,
             CustomAuthActivity.class
@@ -56,6 +60,8 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
             R.string.desc_facebook_login,
             R.string.desc_twitter_login,
             R.string.desc_emailpassword,
+            R.string.desc_passwordless,
+            R.string.desc_phone_auth,
             R.string.desc_anonymous_auth,
             R.string.desc_firebase_ui,
             R.string.desc_custom_auth,
@@ -67,7 +73,7 @@ public class ChooserActivity extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_chooser);
 
         // Set up ListView and Adapter
-        ListView listView = (ListView) findViewById(R.id.list_view);
+        ListView listView = findViewById(R.id.list_view);
 
         MyArrayAdapter adapter = new MyArrayAdapter(this, android.R.layout.simple_list_item_2, CLASSES);
         adapter.setDescriptionIds(DESCRIPTION_IDS);

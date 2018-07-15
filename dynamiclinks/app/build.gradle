@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
+check.dependsOn 'assembleMainDebugAndroidTest'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 27
+    flavorDimensions "irrelevant"
 
     defaultConfig {
         applicationId "com.google.firebase.quickstart.deeplinks"
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion 16
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -20,18 +21,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "all"
+
+    productFlavors {
+        main {
+            dimension "all"
+
+            // TODO(developer): Replace this with your Dynamic Links domain
+            //                  See: https://firebase.google.com/docs/dynamic-links/android/create#set-up-firebase-and-the-dynamic-links-sdk
+            resValue "string", "dynamic_links_domain", "YOUR_APP.page.link"
+        }
+    }
 }
 
 configurations.all {
-    resolutionStrategy.force 'com.android.support:support-annotations:25.3.1'
+    resolutionStrategy.force 'com.android.support:support-annotations:27.1.1'
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.google.firebase:firebase-invites:10.2.6'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
 
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-    androidTestCompile 'com.android.support.test:runner:0.5'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-invites:16.0.1'
+
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
 }
 
 apply plugin: 'com.google.gms.google-services'
