@@ -18,6 +18,7 @@ the sample you wish to run.
 
 - [Admob](admob/README.md)
 - [Analytics](analytics/README.md)
+- [App Distribution](appdistribution/README.md)
 - [App-Indexing](app-indexing/README.md)
 - [Auth](auth/README.md)
 - [Config](config/README.md)
@@ -26,13 +27,23 @@ the sample you wish to run.
 - [Firestore](firestore/README.md)
 - [Functions](functions/README.md)
 - [Dynamic Links](dynamiclinks/README.md)
-- [Invites](invites/README.md)
+- [In-App Messaging](inappmessaging/README.md)
 - [Messaging](messaging/README.md)
 - [ML Kit](mlkit/README.md)
+- [ML Kit LanguageID](mlkit-langid/README.md)
+- [ML Kit Smart Reply](mlkit-smartreply/README.md)
+- [ML Kit Translate](mlkit-translate/README.md)
 - [Performance Monitoring](perf/README.md)
 - [Storage](storage/README.md)
+- [Vertex AI](vertexai/README.md)
 
 ## How to make contributions?
 Please read and follow the steps in the [CONTRIBUTING.md](CONTRIBUTING.md)
 
-[![Build Status](https://travis-ci.org/firebase/quickstart-android.svg?branch=master)](https://travis-ci.org/firebase/quickstart-android)
+[![Actions Status][gh-actions-badge]][gh-actions]
+[![SAM Score][sam-score-badge]][sam-score]
+
+[gh-actions]: https://github.com/firebase/quickstart-android/actions
+[gh-actions-badge]: https://github.com/firebase/quickstart-android/workflows/Android%20CI/badge.svg
+[sam-score]: https://ossbot.computer/samscore.html
+[sam-score-badge]: https://ossbot.computer/samscorebadge?org=firebase&repo=quickstart-android

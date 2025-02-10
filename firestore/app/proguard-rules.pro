@@ -2,7 +2,7 @@
 # By default, the flags in this file are appended to flags specified
 # in /usr/local/google/home/samstern/android-sdk-linux/tools/proguard/proguard-android.txt
 # You can edit the include path and order by changing the proguardFiles
-# directive in build.gradle.
+# directive in build.gradle.kts.
 #
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
@@ -25,7 +25,8 @@
 #-renamesourcefileattribute SourceFile
 
 # Keep custom model classes
--keep class com.google.firebase.example.fireeats.model.** { *; }
+-keep class com.google.firebase.example.fireeats.java.model.** { *; }
+-keep class com.google.firebase.example.fireeats.kotlin.model.** { *; }
 
 # https://github.com/firebase/FirebaseUI-Android/issues/1175
 -dontwarn okio.**
